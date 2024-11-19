@@ -28,7 +28,7 @@ export default function Home() {
     const data = await res.json();
     setUserData(data.user);
   }
-  console.log(userData.avatar);
+  console.log(userData);
 
   useEffect(() => {
     getUser();
@@ -40,7 +40,7 @@ export default function Home() {
 
     msgerChat = document.querySelector(".msger-chat");
 
-    socket = io("http://localhost:5879");
+    socket = io("https://privatechatapp-zcai.onrender.com");
 
     socket.on("connect", () => {
       appendMessage("right", socket.id, "ChatId");
