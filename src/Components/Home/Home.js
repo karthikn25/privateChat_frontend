@@ -16,10 +16,10 @@ export default function Home() {
     "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_640.png"
   );
 
-  const { id } = useParams();
-
+  const id = localStorage.getItem("id");
+  
   async function getUser() {
-    const res = await fetch(`http://localhost:5879/api/user/getuser/${id}`, {
+    const res = await fetch(`https://privatechatapp-zcai.onrender.com/api/user/getuser/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

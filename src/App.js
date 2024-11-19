@@ -23,9 +23,9 @@ function App() {
 
     <Route exact path='/reset-password/:id/:token' element={<Reset/>}/>
 
-    <Route exact path='/home/:id' element={<Home user={user} setUser={setUser}/>}/>
+    <Route exact path='/home/:token' element={<Home user={user} setUser={setUser}/>}/>
 
-    <Route exact path='/edit/:id' element={<EditBio/>}/>
+    <Route exact path='/edit/:token' element={<EditBio/>}/>
 
     <Route exact path='*' element={<Error/>}/>
 

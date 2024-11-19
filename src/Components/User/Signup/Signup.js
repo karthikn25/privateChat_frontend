@@ -22,7 +22,7 @@ export default function Signup() {
       email,
       password,
     };
-    const res = await fetch(`http://localhost:5879/api/user/signup`, {
+    const res = await fetch(`https://privatechatapp-zcai.onrender.com/api/user/signup`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {

@@ -19,7 +19,7 @@ export default function Signin() {
       email,
       password,
     };
-    const res = await fetch(`http://localhost:5879/api/user/signin`, {
+    const res = await fetch(`https://privatechatapp-zcai.onrender.com/api/user/signin`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
@@ -27,15 +27,16 @@ export default function Signin() {
       },
     });
     const data = await res.json();
+    console.log(data);
     if (!data.token) {
       setSuccess("");
       setError(data.message);
     } else {
       setSuccess(data.message);
       setError("");
-      sessionStorage.setItem("token", data.token);
+      localStorage.setItem("token", data.token);
       setTimeout(() => {
-        navigate(`/home/${data.user._id}`);
+        navigate(`/home/${data.token}`);
       }, 2000);
     }
   };

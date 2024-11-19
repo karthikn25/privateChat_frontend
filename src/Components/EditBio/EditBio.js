@@ -11,7 +11,7 @@ export default function EditBio() {
 
   const navigate = useNavigate("");
 
-  const { id } = useParams();
+const id = localStorage.getItem("id");
 
   const handleImageClick = () => {
     inputRef.current.click();
@@ -48,7 +48,7 @@ export default function EditBio() {
     formData.append('avatar', userDetails.avatar);
 
     try {
-      const response = await fetch(`http://localhost:5879/api/user/edit/${id}`, {
+      const response = await fetch(`https://privatechatapp-zcai.onrender.com/api/user/edit/${id}`, {
         method: 'PUT', // or 'POST' if creating new user
         body: formData,
       });

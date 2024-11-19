@@ -9,7 +9,7 @@ export default function Forget() {
   const handleForget = async (event) => {
     event.preventDefault();
 
-    const res = await fetch(`http://localhost:5879/api/user/forget-password`, {
+    const res = await fetch(`https://privatechatapp-zcai.onrender.com/api/user/forget-password`, {
       method: "POST",
       body: JSON.stringify({ email }),
       headers: {

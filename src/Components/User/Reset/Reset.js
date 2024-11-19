@@ -18,7 +18,7 @@ export default function Reset() {
     //   return;
     // }
 
-    const url = `http://localhost:5879/api/user/reset-password/${id}/${token}`;
+    const url = `https://privatechatapp-zcai.onrender.com/api/user/reset-password/${id}/${token}`;
 
     const userdata = {
       password,
