@@ -37,7 +37,7 @@ export default function Signin() {
       localStorage.setItem("token", data.token);
       localStorage.setItem("id",data.user._id);
       setTimeout(() => {
-        navigate(`/home/${data.token}`);
+        navigate(`/home/${data.user._id}`);
       }, 2000);
     }
   };

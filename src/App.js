@@ -10,12 +10,11 @@ import { useState } from 'react';
 import Error from './Components/Error';
 
 function App() {
-  const [user,setUser]=useState([]);
 
   return (
     <div className="App">
     <Routes>
-    <Route exact path='/' element={<Signin user={user} setUser={setUser}/>}/>
+    <Route exact path='/' element={<Signin/>}/>
 
     <Route exact path='/signup' element={<Signup/>}/>
 
@@ -23,9 +22,9 @@ function App() {
 
     <Route exact path='/reset-password/:id/:token' element={<Reset/>}/>
 
-    <Route exact path='/home/:token' element={<Home user={user} setUser={setUser}/>}/>
+    <Route exact path='/home/:id' element={<Home/>}/>
 
-    <Route exact path='/edit/:token' element={<EditBio/>}/>
+    <Route exact path='/edit/:id' element={<EditBio/>}/>
 
     <Route exact path='*' element={<Error/>}/>
 

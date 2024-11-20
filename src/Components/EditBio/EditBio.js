@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./EditBio.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function EditBio() {
   const inputRef = useRef(null);
@@ -11,7 +11,8 @@ export default function EditBio() {
 
   const navigate = useNavigate("");
 
-  const id = localStorage.getItem("id");
+  const {id}=useParams();
+  
   const token = localStorage.getItem("token");
 
   const handleImageClick = () => {
