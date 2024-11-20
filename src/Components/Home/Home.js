@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 
 let msgerChat;
@@ -17,6 +17,7 @@ export default function Home() {
   );
 
   const id = localStorage.getItem("id");
+  const token = localStorage.getItem("token");
   
   async function getUser() {
     const res = await fetch(`https://privatechatapp-zcai.onrender.com/api/user/getuser/${id}`, {
@@ -149,7 +150,7 @@ export default function Home() {
 
             <h5 id="profile-name">{userData.username}</h5>
             <div className="bio">{userData.bio}</div>
-            <button onClick={() => navigate(`/edit/${id}`)}>Edit</button>
+            <button onClick={() => navigate(`/edit/${token}`)}>Edit</button>
           </div>
         </div>
       </div>
