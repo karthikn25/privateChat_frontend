@@ -315,6 +315,8 @@ export default function Home() {
           </figure>
           <h5 id="profile-name">{userData.username || "Loading..."}</h5>
           <div className="bio">{userData.bio || "No bio available"}</div>
+           <button onClick={() => navigate(`/edit/${token}`)}>Edit</button>
+
         </div>
       </div>
     </div>
