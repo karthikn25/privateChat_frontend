@@ -54,6 +54,7 @@ export default function EditBio() {
         body: formData,
       });
       const data = await response.json();
+      console.log(data);
       if (response.ok) {
         setError("");
             setSuccess(data.message);
